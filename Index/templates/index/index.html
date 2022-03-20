@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    {{% load static %} }
+    {% load static %} 
+
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Blog Home - Start Bootstrap Template</title>
+            <title> Blog Home </title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href= {% static "css/styles.css" %} rel="stylesheet" />
     </head>
+    
     <body>
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -28,28 +30,39 @@
                 </div>
             </div>
         </nav>
+
         <!-- Page header with logo and tagline-->
         <header class="py-5 bg-light border-bottom mb-4">
             <div class="container">
                 <div class="text-center my-5">
-                    <h1 class="fw-bolder">Welcome to Blog Home!</h1>
-                    <p class="lead mb-0">A Bootstrap 5 starter layout for your next blog homepage</p>
+                    {% block Bloque_Head %}
+                        <h1 class="fw-bolder">Bienvenido a mi Blog</h1>
+                          
+                    {% endblock  %}
+                    <p class="lead mb-0">Laura Soledad Carreras</p> 
+
                 </div>
             </div>
         </header>
+        
+    
+        {% block  PruebaTemplate %} 
+
+        {% endblock  %}
+
         <!-- Page content-->
         <div class="container">
             <div class="row">
                 <!-- Blog entries-->
-                <div class="col-lg-8">
+                <div class="col-lg-15">
                     <!-- Featured blog post-->
                     <div class="card mb-4">
-                        <a href="#!"><img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                        <a href="#!"><img class="card-img-top" src="https://www.teachworkoutlove.com/wp-content/uploads/2019/01/blog-blogger-blogging-4458-780x470.jpg" alt="..." /></a>
                         <div class="card-body">
-                            <div class="small text-muted">January 1, 2021</div>
-                            <h2 class="card-title">Featured Post Title</h2>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-                            <a class="btn btn-primary" href="#!">Read more →</a>
+                            <div class="small text-muted">Marzo 20, 2022</div>
+                            <h2 class="card-title">Me presento </h2>
+                            <p class="card-text">Hola, mi nombre es Laura soy mama de Pia y Franchesca.  Trabajo como Lider de Proyecto en el Area de Innovacion en Camuzzzi Gas, una empresa distribuidora de Gas del Sur de Argentina.  Actualmente vivimos con mi bb y mi pareja en mar del plata.  Encare este blog para el curso de Phyton de Coder House, incursionandome con bastantes trabas en la programciòn web. </p>
+                            
                         </div>
                     </div>
                     <!-- Nested row for non-featured blog posts-->
@@ -112,16 +125,7 @@
                             <li class="page-item"><a class="page-link" href="#!">Older</a></li>
                         </ul>
                     </nav>
-                </div>
-                <!-- Side widgets-->
-                <div class="col-lg-4">
-                 
-                    </div>
-              
-               
-                </div>
-            </div>
-        </div>
+
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
