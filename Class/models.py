@@ -3,11 +3,11 @@ from sqlite3 import Timestamp
 from statistics import mode
 from django.db import models
 
-#class User(models.Model):
- #   nombre = models.CharField(max_length=20)
- #   apellido = models.CharField(max_length=30)  
-  #  email = models.EmailField()
-  #  tipo = models.CharField(max_length=10)  
+class User(models.Model):
+    nombre = models.CharField(max_length=20)
+    apellido = models.CharField(max_length=30)  
+    email = models.EmailField()
+    tipo = models.CharField(max_length=10)  
 
 class Post(models.Model):
      title = models.CharField(max_length=100) 
