@@ -3,9 +3,14 @@ from datetime import datetime
 from importlib.abc import Loader
 from pipes import Template
 from re import template
+import re
 from xml.dom.minidom import Document
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.template import Context,Template, loader
+
+def inicio(request):
+    return render(request,"index/index.html",{})
 
 def saludo(request):
     return HttpResponse("Hola Django - Coder")
@@ -28,18 +33,13 @@ def MyNombreEs (self,nombre):
     return HttpResponse(documentotexto)
 
 def probandoTemplate (request):
-
     nombre = 'Laura'
     apellido = 'Carreras'
 
     diccionario = {
-        "nombre" : nombre , 
-        "apellido" : apellido,
-        "nombre_largo" : len(nombre)
-        }
-
-    template = loader.get_template("template1.html")
-
-    documento = template.render(diccionario)
+         "nombre" : nombre , 
+         "apellido" : apellido,
+         "nombre_largo" : len(nombre)
+         }
     
-    return HttpResponse(documento)
+    return render(request,"index/template1.html",diccionario)

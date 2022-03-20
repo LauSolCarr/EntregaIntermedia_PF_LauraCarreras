@@ -56,7 +56,7 @@ ROOT_URLCONF = 'EntregaIntermedia_PF_LauraCarreras.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["/Users/laurasoledadcarreras/Desktop/Python/EntregaIntermedia_PF_LauraCarreras2/Index/Template/"],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
