@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Index',
+    'Class'
 ]
 
 MIDDLEWARE = [
@@ -54,14 +56,14 @@ ROOT_URLCONF = 'EntregaIntermedia_PF_LauraCarreras.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["/Users/laurasoledadcarreras/Desktop/Python/EntregaIntermedia_PF_LauraCarreras2/Index/Plantillas/"],
+        'DIRS': ["/Users/laurasoledadcarreras/Desktop/Python/EntregaIntermedia_PF_LauraCarreras2/Index/Template/"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                'django.contrib.messages.context_processors.messages'
             ],
         },
     },
