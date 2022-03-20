@@ -1,3 +1,4 @@
+
 from datetime import datetime
 from importlib.abc import Loader
 from pipes import Template
@@ -42,4 +43,3 @@ def probandoTemplate (request):
     documento = template.render(diccionario)
     
     return HttpResponse(documento)
-
