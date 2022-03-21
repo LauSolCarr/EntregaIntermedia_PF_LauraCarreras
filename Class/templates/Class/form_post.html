@@ -1,0 +1,33 @@
+{% extends 'Index/index.html' %}
+
+    {% block Bloque_Navegador %}
+        <a class="navbar-brand" href="#!">Post</a>
+    {% endblock   %} 
+
+    {% block Bloque_Head %}
+        <h1 class="fw-bolder"> Crear Post </h1>
+    {% endblock  %}
+
+
+    {% block Bloque_Body %}
+    <div class="container">
+        <div class="row">
+            <!-- Blog entries-->
+            <div class="col-lg-20">
+                <div class="card mb-4">
+
+                <form action= {% url 'formulario_post' %} method = 'post'>
+                    {% csrf_token %}
+
+                        <table>
+                        {{formulario_post.as_table}}
+                        </table>
+                            
+                    <input type="submit" placeholder = 'enviar'>
+
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+    {% endblock  %}

@@ -14,12 +14,12 @@ class User(models.Model):
 
 class Post(models.Model):
      title = models.CharField(max_length=100) 
-     content = models.TextField()
+     content = models.CharField(max_length=100) 
      publish_date = models.DateTimeField(auto_now_add=True)
      last_upda = models.DateTimeField(auto_now=True)
      
      def __str__(self):
-        return f"Titulo: {self.title} Contenido: {self.content} Fecha de Publicaciòn:{self.publish_date} {self.last_upda}"
+        return f"Titulo: {self.title} Contenido: {self.content} Fecha de Publicaciòn:{self.publish_date} Fecha de Actualizacion: {self.last_upda}"
 
 class Comment(models.Model):
     Timestamp = models.DateTimeField(auto_now_add=True)

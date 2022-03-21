@@ -6,8 +6,8 @@
 
 # 2.Modelo de por lo menos 3 clases, un formulario para ingresar datos a las 3 clases 
 #   Clase 1 "User"
-#   Clase 2 
-#   Clase 3 
+#   Clase 2 "Post"
+#   Clase 3 "Comment"
 
 # 3.Formulario para buscar algo en la BD, no hace falta que sea sobre las tres clases, con realizar búsqueda sobre una alcanzará.
 #   Clase "User" --> "Busqueda de Usuario"
