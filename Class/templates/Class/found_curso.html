@@ -1,0 +1,43 @@
+
+
+{% extends 'Index/index.html' %}
+
+{% block Bloque_Navegador %}
+    <a class="navbar-brand" href="#!">User</a>
+{% endblock   %} 
+
+{% block Bloque_Head %}
+    <h1 class="fw-bolder"> Buscar Usuario </h1>
+{% endblock  %}
+
+
+{% block Bloque_Body %}
+
+            <form action= {% url 'busqueda_usuario' %} method = 'get'>
+                {% csrf_token %}
+
+                    <table>
+                    {{buscador.as_table}}
+                    </table>
+                    
+                <input type="submit" placeholder = 'enviar'>
+            </form>
+            
+            {% if dato_buscado  %}
+                Se busco por el usuario {{dato_buscado}}
+                {% for usuario in usuarios_buscados  %}
+                    <li>    
+                        {{usuario}}
+                    </li>
+                {% endfor %}
+            {% else %}
+                No se busco nada...
+            {% endif %}
+                
+           
+ 
+               
+
+       
+
+{% endblock  %}

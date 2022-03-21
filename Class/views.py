@@ -3,9 +3,8 @@ from urllib import request
 from django.http import HttpResponse
 from django.shortcuts import render
 from Class.models import User
-from Class.forms import User_form
+from Class.forms import User_form,User_found
 
-# Create your views here.
 
 def nuevo_user(request):
     nuevo_user = User(nombre='Laura',apellido='Carrreras',email='laura.s.carreras@gmail.com',tipo= 'admin')
@@ -25,3 +24,24 @@ def formulario_usuario(request):
                  return render(request,"index/index.html",{'nuevo_usuer':nuevo_user})
 
     return render(request,"class/form_user.html",{'formulario': formulario})
+
+def busqueda_usuario(request):
+    usuarios_buscados = User.objects.filter(nombre='Laura')
+
+    dato = request.GET.get('partial_user',None)
+
+    if dato is not None:
+        #usuarios_buscados = User.objects.filter(nombre=dato)
+        usuarios_buscados = User.objects.filter(nombre__icontains=dato)
+    
+    buscador = User_found()
+
+    return render(
+        request,'Class/found_curso.html',
+        {
+            'buscador':buscador,
+            'usuarios_buscados':usuarios_buscados,
+            'dato_buscado':dato 
+        }
+    )
+
