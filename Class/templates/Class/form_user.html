@@ -1,0 +1,20 @@
+{% extends 'Index/Index.html' %}
+
+    {% block Bloque_Navegador %}
+        <a class="navbar-brand" href="#!">Usuario</a>
+    {% endblock   %} 
+
+    {% block Bloque_Head %}                            
+    <h1 class="fw-bolder">Crear Usuario </h1>
+    {% endblock  %}
+
+    {% block Bloque_Blog %}
+       
+        <form action="" method="post">
+            {% csrf_token %}
+            <table> 
+                {{form.as_table}}
+            </table>
+            <input type="submit" placeholder = "Enviar"> 
+        </form>
+    {% endblock  %}
