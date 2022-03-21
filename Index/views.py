@@ -12,6 +12,9 @@ from django.template import Context,Template, loader
 def inicio(request):
     return render(request,"index/index.html",{})
 
+def blog(request):
+    return render(request,"index/blog.html",{})
+
 def saludo(request):
     return HttpResponse("Hola Django - Coder")
 
