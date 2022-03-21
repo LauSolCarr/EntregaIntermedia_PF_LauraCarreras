@@ -1,7 +1,5 @@
    
 from django.urls import path, include
-
-from Class.models import User
 from .views import blog, inicio, saludo, segunda_vista, probandoTemplate
 
 
