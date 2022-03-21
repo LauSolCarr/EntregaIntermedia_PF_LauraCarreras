@@ -4,20 +4,14 @@ from importlib.resources import contents
 from urllib import request
 from django.http import HttpResponse
 from django.shortcuts import render
-from Class.models import User,Post
-from Class.forms import Post_form, User_form,User_found
+from Class.models import User,Post, Comment
+from Class.forms import Post_form, User_form,User_found, Comment_form
 
 
 def nuevo_user(request):
     nuevo_user = User(nombre='Laura',apellido='Carrreras',email='laura.s.carreras@gmail.com',tipo= 'admin')
     nuevo_user.save()
     return HttpResponse(f"Se creo el usuario {nuevo_user.nombre} tipo {nuevo_user.tipo}")
-
-#def nuevo_post(request):
-#    nuevo_post = User(titulo='Hola',comentarios='Mi nombre es Laura',)
-#    nuevo_post.save()
-#    return HttpResponse(f"Se creo un nuevo post {nuevo_post.titulo} tipo {nuevo_post.comntario}")
-
 
 def formulario_usuario(request):
     formulario = User_form()
@@ -45,6 +39,19 @@ def formulario_post(request):
             return render(request,"index/index.html",{'nuevo_post':nuevo_post})
     
     return render(request,"class/form_post.html",{'formulario_post':formulario_post})
+
+def formulario_comentario(request):
+    formulario_comentario = Comment_form()
+
+    if request.method == 'POST':
+        formulario_comentario = Comment_form(request.POST)
+        if formulario_comentario.is_valid():
+            data = formulario_comentario.cleaned_data
+            nuevo_comentario = Comment(content = data ['content'])
+            nuevo_comentario.save()
+            return render(request,"index/index.html",{'nuevo_comentario':nuevo_comentario})
+
+    return render(request,"Class/form_comment.html",{'formulario_comentario':formulario_comentario})
 
     
    # if request.method == 'POST':

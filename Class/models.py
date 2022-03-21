@@ -23,7 +23,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
     Timestamp = models.DateTimeField(auto_now_add=True)
-    content = models.TextField()
+    content = models.CharField(max_length=1000)
 
     def __str__(self):
         return f"{self.Timestamp} {self.content}"
