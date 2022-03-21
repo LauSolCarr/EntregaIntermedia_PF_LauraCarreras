@@ -13,6 +13,15 @@
 
 {% block Bloque_Body %}
 
+
+
+<div class="container">
+    <div class="row">
+        <!-- Blog entries-->
+        <div class="col-lg-20">
+            <div class="card mb-4">
+            
+
             <form action= {% url 'busqueda_usuario' %} method = 'get'>
                 {% csrf_token %}
 
@@ -34,7 +43,10 @@
                 No se busco nada...
             {% endif %}
                 
-           
+            </div>
+        </div>  
+    </div>
+</div>      
  
                
 

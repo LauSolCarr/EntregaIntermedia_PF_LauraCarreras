@@ -37,7 +37,7 @@ def busqueda_usuario(request):
     buscador = User_found()
 
     return render(
-        request,'Class/found_curso.html',
+        request,'Class/found_user.html',
         {
             'buscador':buscador,
             'usuarios_buscados':usuarios_buscados,
